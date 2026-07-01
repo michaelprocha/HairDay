@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@theme {
+    --font-catamaran: "Catamaran", sans-serif;
+
+    --color-*: initial;
+    --color-yellow-light: #DBC170;
+    --color-yellow: #B8952E;
+    --color-yellow-dark: #846F2E;
+    --color-gray-100: #F5F4F5;
+    --color-gray-200: #B2AFB6;
+    --color-gray-300: #98959D;
+    --color-gray-400: #7A767F;
+    --color-gray-500: #3E3C41;
+    --color-gray-600: #2E2C30;
+    --color-gray-700: #232225;
+    --color-gray-800: #19181B;
+    --color-gray-900: #050505;
+}
+
+@utility title-lg {
+    font-size: 32px;
+    @apply leading-6 font-bold;
+}
+
+@utility title-md {
+    font-size: 16px
+    @apply leading-6 font-bold;
+}
+
+@utility title-sm {
+    font-size: 14px
+    @apply leading-5 font-bold;
+}
+
+@utility text-md {
+    font-size: 16px
+    @apply leading-6 font-normal;
+}
+
+@utility text-sm {
+    font-size: 14px
+    @apply leading-5 font-normal;
+}
