@@ -17,3 +17,28 @@
     --color-gray-800: #19181B;
     --color-gray-900: #050505;
 }
+
+@utility title-lg {
+    font-size: 32px;
+    @apply leading-6 font-bold;
+}
+
+@utility title-md {
+    font-size: 16px
+    @apply leading-6 font-bold;
+}
+
+@utility title-sm {
+    font-size: 14px
+    @apply leading-5 font-bold;
+}
+
+@utility text-md {
+    font-size: 16px
+    @apply leading-6 font-normal;
+}
+
+@utility text-sm {
+    font-size: 14px
+    @apply leading-5 font-normal;
+}
