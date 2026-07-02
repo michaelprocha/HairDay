@@ -1,3 +1,6 @@
+import { mainStyles } from "./Main.styles";
+
 export function Main() {
-  return <main></main>;
+  const { main } = mainStyles();
+  return <main className={main()}></main>;
 }
