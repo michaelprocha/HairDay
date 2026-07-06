@@ -11,6 +11,7 @@ export function Button({
   return (
     <button
       className={buttonStyles({ color, size, disabled })}
+      disabled={disabled}
       {...props}
     >
       {children}
