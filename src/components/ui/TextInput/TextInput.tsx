@@ -7,12 +7,14 @@ export function TextInput({
   text,
   spacing,
   outline,
+  ...props
 }: TextInputProps) {
   return (
     <input
       className={textInputStyles({ color, text, spacing, outline })}
       type="text"
       placeholder={placeholder}
+      {...props}
     />
   );
 }
