@@ -20,7 +20,7 @@ async function getSchedule(): Promise<Array<Appointment>> {
 }
 
 async function postAppointment(
-  newAppointment: Appointment,
+  newAppointment: Omit<Appointment, "id">,
 ): Promise<Appointment> {
   try {
     const postAppointment = await fetch(`${URL}/${paths.schedule}`, {
@@ -40,4 +40,25 @@ async function postAppointment(
   }
 }
 
-export { getSchedule, postAppointment };
+async function deleteAppointment(appointmentId: string): Promise<Appointment> {
+  try {
+    const deleteAppointment = await fetch(
+      `${URL}/${paths.schedule}/${appointmentId}`,
+      {
+        method: "DELETE",
+        headers: headers,
+      },
+    );
+
+    if (deleteAppointment.ok) {
+      const appointment = deleteAppointment.json();
+      return appointment;
+    }
+
+    throw new Error();
+  } catch (error) {
+    return {} as Appointment;
+  }
+}
+
+export { getSchedule, postAppointment, deleteAppointment };
