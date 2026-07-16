@@ -1,6 +1,9 @@
 import { URL, paths } from "./api";
 import type { Appointment } from "../types/appointment.types";
 
+const headers = new Headers();
+headers.append("content-type", "application/json");
+
 async function getSchedule(): Promise<Array<Appointment>> {
   try {
     const fetchSchedule = await fetch(`${URL}/${paths.schedule}`);
@@ -16,4 +19,25 @@ async function getSchedule(): Promise<Array<Appointment>> {
   }
 }
 
-export { getSchedule };
+async function postAppointment(
+  newAppointment: Appointment,
+): Promise<Appointment> {
+  try {
+    const postAppointment = await fetch(`${URL}/${paths.schedule}`, {
+      method: "POST",
+      body: JSON.stringify(newAppointment),
+      headers: headers,
+    });
+
+    if (postAppointment.ok) {
+      const appointment = await postAppointment.json();
+      return appointment;
+    }
+
+    throw new Error();
+  } catch (error) {
+    return {} as Appointment;
+  }
+}
+
+export { getSchedule, postAppointment };
