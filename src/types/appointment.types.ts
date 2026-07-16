@@ -1,7 +1,7 @@
-interface appointment {
+interface Appointment {
   id: string;
   name: string;
   date: string;
 }
 
-export type { appointment };
+export type { Appointment };

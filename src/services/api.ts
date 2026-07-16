@@ -1,7 +1,7 @@
 const URL = "http://localhost:3000";
 
 const paths = {
-  schedule: "/schedule",
+  schedule: "schedule",
 };
 
 export { URL, paths };
