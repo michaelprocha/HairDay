@@ -13,7 +13,7 @@ export function DateInput({
   text,
   ...props
 }: DateInputProps) {
-  const { labelDate, iconDate, inputDate } = dateInputStyles();
+  const { labelDate, inputDate, spanText } = dateInputStyles();
 
   return (
     <label
@@ -21,10 +21,7 @@ export function DateInput({
       htmlFor="date"
       className={labelDate({ color })}
     >
-      <Icon
-        icon={calendarBlanckIcon}
-        className={iconDate({ color })}
-      />
+      <Icon icon={calendarBlanckIcon} />
       <input
         className={inputDate({ color, text })}
         type="date"
@@ -33,12 +30,11 @@ export function DateInput({
         onChange={HandleChangeDate}
         {...props}
       />
-      <span className="cursor-pointer text-md text-gray-200 pb-0.5">
-        {dateValue}
-      </span>
+      <span className={spanText()}>{dateValue}</span>
       <Icon
         icon={careDownIcon}
-        className="text-gray-300 size-4"
+        color="secondary"
+        size="sm"
       />
     </label>
   );

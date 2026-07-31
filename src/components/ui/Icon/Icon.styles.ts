@@ -4,6 +4,11 @@ const iconStyles = tv({
   variants: {
     color: {
       primary: "text-yellow",
+      secondary: "text-gray-300",
+    },
+    size: {
+      sm: "size-4",
+      md: "size-5",
     },
     animete: {
       none: "",
@@ -11,6 +16,7 @@ const iconStyles = tv({
   },
   defaultVariants: {
     color: "primary",
+    size: "md",
     animete: "none",
   },
 });
