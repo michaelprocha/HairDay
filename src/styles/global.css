@@ -20,7 +20,7 @@
 
 @utility title-lg {
     font-size: 32px;
-    @apply leading-6 font-bold;
+    @apply leading-8 font-bold;
 }
 
 @utility title-md {
