@@ -1,16 +1,14 @@
-import type { ComponentProps, Ref } from "react";
+import type { ComponentProps } from "react";
 import { type VariantProps } from "tailwind-variants";
 import type { formStyles } from "./Form.styles";
+import type { Appointment } from "../../../types/appointment.types";
 
 type FormProps = Omit<
   ComponentProps<"form">,
   keyof VariantProps<typeof formStyles>
 > &
   VariantProps<typeof formStyles> & {
-    inputDateRef: Ref<HTMLInputElement>;
-    dateValue: string;
-    HandleChangeDate: () => void;
-    HandleOpenCalendar: () => void;
+    schedule: Array<Appointment>;
   };
 
 export { type FormProps };

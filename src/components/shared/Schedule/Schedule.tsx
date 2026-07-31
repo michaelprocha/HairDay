@@ -2,7 +2,7 @@ import { TimeSelect } from "../../ui";
 import { scheduleStyles } from "./Schedule.styles";
 import type { ScheduleProps } from "./Schedule.types";
 
-export function Schedule({ color, typeText, size }: ScheduleProps) {
+export function Schedule({ schedule, color, typeText, size }: ScheduleProps) {
   const { period, periods, times, text, title } = scheduleStyles();
   return (
     <div className={periods({ size })}>
