@@ -2,13 +2,7 @@ import { Form } from "../../shared";
 import { asideStyles } from "./Aside.styles";
 import type { AsideProps } from "./Aside.types";
 
-export function Aside({
-  inputDateRef,
-  HandleChangeDate,
-  HandleOpenCalendar,
-  dateValue,
-  ...props
-}: AsideProps) {
+export function Aside({ schedule, ...props }: AsideProps) {
   const { aside, title, paragraph, textArea } = asideStyles();
   return (
     <aside
@@ -22,12 +16,7 @@ export function Aside({
           agendamento
         </p>
       </div>
-      <Form
-        inputDateRef={inputDateRef}
-        HandleChangeDate={HandleChangeDate}
-        HandleOpenCalendar={HandleOpenCalendar}
-        dateValue={dateValue}
-      />
+      <Form schedule={schedule} />
     </aside>
   );
 }
