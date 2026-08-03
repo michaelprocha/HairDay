@@ -12,6 +12,9 @@ const buttonIconStyles = tv({
       },
     },
     size: {
+      sx: {
+        iconStyles: "size-4",
+      },
       sm: {
         iconStyles: "size-8",
       },
