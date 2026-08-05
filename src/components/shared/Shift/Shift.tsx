@@ -8,7 +8,6 @@ import type { ShiftProps } from "./Shift.types";
 import { shiftStyles } from "./Shift.styles";
 
 export function Shift({ appointments, timeOfDay }: ShiftProps) {
-  console.log(appointments);
   const {
     shiftStyle,
     headerStyle,
@@ -17,6 +16,9 @@ export function Shift({ appointments, timeOfDay }: ShiftProps) {
     lineStyle,
     lineParagraphStyle,
   } = shiftStyles();
+  const handleDeleteAppointment = (idAppointment: string) => {
+    console.log(idAppointment);
+  };
   if (timeOfDay === "morning") {
     return (
       <div className={shiftStyle()}>
@@ -39,6 +41,7 @@ export function Shift({ appointments, timeOfDay }: ShiftProps) {
               <ButtonIcon
                 icon={trashIcon}
                 size="sx"
+                onClick={() => handleDeleteAppointment(appointment.id)}
               />
             </li>
           ))}
@@ -49,36 +52,58 @@ export function Shift({ appointments, timeOfDay }: ShiftProps) {
 
   if (timeOfDay === "afternoon") {
     return (
-      <div>
-        <div>
+      <div className={shiftStyle()}>
+        <div className={headerStyle()}>
           <Icon icon={cloudSunIcon} />
-          <p>Tarde</p>
-          <p>13h-18h</p>
+          <p
+            className={headerParagraphStyle({ class: "flex-1 text-gray-300" })}
+          >
+            Tarde
+          </p>
+          <p className={headerParagraphStyle()}>13h-18h</p>
         </div>
-        <ol>
-          <li>
-            <p>13:00</p>
-            <p>Michael Rocha</p>
-            <ButtonIcon icon={trashIcon} />
-          </li>
+        <ol className={listStyle()}>
+          {appointments.map((appointment) => (
+            <li className={lineStyle()}>
+              <p className={lineParagraphStyle()}>{appointment.date}</p>
+              <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
+                {appointment.name}
+              </p>
+              <ButtonIcon
+                icon={trashIcon}
+                size="sx"
+                onClick={() => handleDeleteAppointment(appointment.id)}
+              />
+            </li>
+          ))}
         </ol>
       </div>
     );
   }
 
   return (
-    <div>
-      <div>
+    <div className={shiftStyle()}>
+      <div className={headerStyle()}>
         <Icon icon={moonStarIcon} />
-        <p>Noite</p>
-        <p>19h-21h</p>
+        <p className={headerParagraphStyle({ class: "flex-1 text-gray-300" })}>
+          Noite
+        </p>
+        <p className={headerParagraphStyle()}>19h-21h</p>
       </div>
-      <ol>
-        <li>
-          <p>21:00</p>
-          <p>Michael Rocha</p>
-          <ButtonIcon icon={trashIcon} />
-        </li>
+      <ol className={listStyle()}>
+        {appointments.map((appointment) => (
+          <li className={lineStyle()}>
+            <p className={lineParagraphStyle()}>{appointment.date}</p>
+            <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
+              {appointment.name}
+            </p>
+            <ButtonIcon
+              icon={trashIcon}
+              size="sx"
+              onClick={() => handleDeleteAppointment(appointment.id)}
+            />
+          </li>
+        ))}
       </ol>
     </div>
   );
