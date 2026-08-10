@@ -1,10 +1,11 @@
 import userSquareIcon from "../../../assets/icons/userSquare.svg?react";
+import { Button } from "../../ui";
 import { DateInput } from "../../ui/DateInput";
 import { IconTextInput } from "../IconTextInput";
 import { Schedule } from "../Schedule";
 import { formStyles } from "./Form.styles";
 import type { FormProps } from "./Form.types";
-import { useRef, useState } from "react";
+import { useRef, useState, type SubmitEvent } from "react";
 
 export function Form({ schedule, ...props }: FormProps) {
   const inputDateRef = useRef<HTMLInputElement | null>(null);
@@ -13,6 +14,11 @@ export function Form({ schedule, ...props }: FormProps) {
   );
 
   const { form, dateText, inputTextText } = formStyles();
+
+  const handleCreateAppointment = (e: SubmitEvent) => {
+    e.preventDefault();
+    console.log("Enviar...");
+  };
 
   const HandleOpenCalendar = () => {
     if (inputDateRef.current !== null) {
@@ -36,6 +42,7 @@ export function Form({ schedule, ...props }: FormProps) {
   };
   return (
     <form
+      onSubmit={(e) => handleCreateAppointment(e)}
       className={form()}
       {...props}
     >
@@ -53,8 +60,12 @@ export function Form({ schedule, ...props }: FormProps) {
       </div>
       <div>
         <p className={inputTextText()}>Cliente</p>
-        <IconTextInput icon={userSquareIcon} />
+        <IconTextInput
+          required
+          icon={userSquareIcon}
+        />
       </div>
+      <Button type="submit">agendar</Button>
     </form>
   );
 }
