@@ -8,7 +8,7 @@ const buttonStyles = tv({
         "bg-yellow text-gray-900 hover:outline-2 hover:outline-yellow-light cursor-pointer uppercase",
     },
     size: {
-      md: "w-85 h-14",
+      md: "h-14",
     },
     disabled: {
       true: "opacity-30 cursor-default outline-none pointer-events-none",

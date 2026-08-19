@@ -1,5 +1,5 @@
-import { URL, paths } from "./api";
-import type { Appointment } from "../types/appointment.types";
+import { URL, paths } from "../api";
+import type { Appointment } from "../../types/appointment.types";
 
 const headers = new Headers();
 headers.append("content-type", "application/json");
