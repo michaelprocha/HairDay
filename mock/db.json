@@ -1,5 +1,15 @@
 {
   "schedule": [
-    { "id": "1a2b3c4d5e", "name": "teste", "date": "2026-07-16T18:00:00" }
-  ]
+    {
+      "id": "1a2b3c4d5e",
+      "name": "teste",
+      "date": "2026-07-16T18:00:00"
+    },
+    {
+      "name": "asdasdasdasd",
+      "date": "2026-8-22:T18:00:00",
+      "id": "fs7-L2XYl_0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
