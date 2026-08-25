@@ -1,5 +1,5 @@
 import userSquareIcon from "../../../assets/icons/userSquare.svg?react";
-import { useForm } from "../../../hooks/useForm";
+import { useAppoitment } from "../../../hooks/useAppointment";
 import { Button } from "../../ui";
 import { DateInput } from "../../ui/DateInput";
 import { IconTextInput } from "../IconTextInput";
@@ -13,7 +13,7 @@ export function Form({ schedule, ...props }: FormProps) {
   const [inputValue, setInputValue] = useState<string>(
     new Date().toLocaleDateString(navigator.language),
   );
-  const { sendAppointment } = useForm();
+  const { sendAppointment } = useAppoitment();
   const [name, setName] = useState<string>("");
   const [time, setTime] = useState<string>("");
 
@@ -67,7 +67,7 @@ export function Form({ schedule, ...props }: FormProps) {
       <div>
         <Schedule
           schedule={schedule}
-          onChange={(e: ChangeEvent) => handleChangeTime(e)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => handleChangeTime(e)}
           time={time}
         />
       </div>

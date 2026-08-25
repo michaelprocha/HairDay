@@ -10,7 +10,7 @@ type ScheduleProps = Omit<
   VariantProps<typeof scheduleStyles> & {
     schedule: Array<Appointment>;
     time: string;
-    onChange: (e: ChangeEvent) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   };
 
 export type { ScheduleProps };
