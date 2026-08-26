@@ -13,7 +13,7 @@ export function Form({ schedule, ...props }: FormProps) {
   const [inputValue, setInputValue] = useState<string>(
     new Date().toLocaleDateString(navigator.language),
   );
-  const { sendAppointment } = useAppoitment();
+  const { sendAppointment, listAppointment } = useAppoitment();
   const [name, setName] = useState<string>("");
   const [time, setTime] = useState<string>("");
 
@@ -66,7 +66,7 @@ export function Form({ schedule, ...props }: FormProps) {
       </div>
       <div>
         <Schedule
-          schedule={schedule}
+          schedule={listAppointment}
           onChange={(e: ChangeEvent<HTMLInputElement>) => handleChangeTime(e)}
           time={time}
         />

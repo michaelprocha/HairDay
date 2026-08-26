@@ -10,6 +10,7 @@ export function Schedule({
   typeText,
   size,
 }: ScheduleProps) {
+  console.log(schedule);
   const { period, periods, times, text, title } = scheduleStyles();
   return (
     <div className={periods({ size })}>
