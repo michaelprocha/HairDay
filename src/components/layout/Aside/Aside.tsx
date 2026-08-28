@@ -2,7 +2,7 @@ import { Form } from "../../shared";
 import { asideStyles } from "./Aside.styles";
 import type { AsideProps } from "./Aside.types";
 
-export function Aside({ schedule, ...props }: AsideProps) {
+export function Aside({ schedule, sendForm, ...props }: AsideProps) {
   const { aside, title, paragraph, textArea } = asideStyles();
   return (
     <aside
@@ -16,7 +16,10 @@ export function Aside({ schedule, ...props }: AsideProps) {
           agendamento
         </p>
       </div>
-      <Form schedule={schedule} />
+      <Form
+        schedule={schedule}
+        sendForm={sendForm}
+      />
     </aside>
   );
 }

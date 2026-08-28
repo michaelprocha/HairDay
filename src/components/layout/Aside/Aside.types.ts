@@ -9,6 +9,7 @@ type AsideProps = Omit<
 > &
   VariantProps<typeof asideStyles> & {
     schedule: Array<Appointment>;
+    sendForm: (name: string, dateNoFormate: string, time: string) => void;
   };
 
 export { type AsideProps };

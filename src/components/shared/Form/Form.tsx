@@ -1,5 +1,4 @@
 import userSquareIcon from "../../../assets/icons/userSquare.svg?react";
-import { useAppoitment } from "../../../hooks/useAppointment";
 import { Button } from "../../ui";
 import { DateInput } from "../../ui/DateInput";
 import { IconTextInput } from "../IconTextInput";
@@ -8,12 +7,11 @@ import { formStyles } from "./Form.styles";
 import type { FormProps } from "./Form.types";
 import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react";
 
-export function Form({ schedule, ...props }: FormProps) {
+export function Form({ schedule, sendForm, ...props }: FormProps) {
   const inputDateRef = useRef<HTMLInputElement | null>(null);
   const [inputValue, setInputValue] = useState<string>(
     new Date().toLocaleDateString(navigator.language),
   );
-  const { sendAppointment, listAppointment } = useAppoitment();
   const [name, setName] = useState<string>("");
   const [time, setTime] = useState<string>("");
 
@@ -25,7 +23,7 @@ export function Form({ schedule, ...props }: FormProps) {
 
   const handleCreateAppointment = (e: SubmitEvent) => {
     e.preventDefault();
-    sendAppointment(name, inputValue, time);
+    sendForm(name, inputValue, time);
     console.log("Enviado");
   };
 
@@ -66,7 +64,7 @@ export function Form({ schedule, ...props }: FormProps) {
       </div>
       <div>
         <Schedule
-          schedule={listAppointment}
+          schedule={schedule.filter((s) => s.date === inputValue)}
           onChange={(e: ChangeEvent<HTMLInputElement>) => handleChangeTime(e)}
           time={time}
         />

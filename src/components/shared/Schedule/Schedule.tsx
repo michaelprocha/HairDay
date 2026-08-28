@@ -10,7 +10,6 @@ export function Schedule({
   typeText,
   size,
 }: ScheduleProps) {
-  console.log(schedule);
   const { period, periods, times, text, title } = scheduleStyles();
   return (
     <div className={periods({ size })}>
@@ -25,24 +24,28 @@ export function Schedule({
             name="time"
             checked={time === "09:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "09:00").length === 1}
           />
           <TimeSelect
             time="10:00"
             name="time"
             checked={time === "10:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "10:00").length === 1}
           />
           <TimeSelect
             time="11:00"
             name="time"
             checked={time === "11:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "11:00").length === 1}
           />
           <TimeSelect
             time="12:00"
             name="time"
             checked={time === "12:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "12:00").length === 1}
           />
         </div>
       </div>
@@ -56,36 +59,42 @@ export function Schedule({
             name="time"
             checked={time === "13:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "13:00").length === 1}
           />
           <TimeSelect
             time="14:00"
             name="time"
             checked={time === "14:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "14:00").length === 1}
           />
           <TimeSelect
             time="15:00"
             name="time"
             checked={time === "15:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "15:00").length === 1}
           />
           <TimeSelect
             time="16:00"
             name="time"
             checked={time === "16:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "16:00").length === 1}
           />
           <TimeSelect
             time="17:00"
             name="time"
             checked={time === "17:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "16:00").length === 1}
           />
           <TimeSelect
             time="18:00"
             name="time"
             checked={time === "18:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "17:00").length === 1}
           />
         </div>
       </div>
@@ -99,18 +108,21 @@ export function Schedule({
             name="time"
             checked={time === "19:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "19:00").length === 1}
           />
           <TimeSelect
             time="20:00"
             name="time"
             checked={time === "20:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "20:00").length === 1}
           />
           <TimeSelect
             time="21:00"
             name="time"
             checked={time === "21:00"}
             onChange={onChange}
+            disabled={schedule.filter((s) => s.time === "21:00").length === 1}
           />
         </div>
       </div>
