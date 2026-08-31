@@ -1,28 +1,29 @@
 import { Shift } from "../Shift/Shift";
+import type { ShiftsTypes } from "./Shifts.types";
 
-export function Shifts() {
+export function Shifts({ schedule, deleteApp }: ShiftsTypes) {
   return (
     <>
       <Shift
-        appointments={[
-          { id: "1234", name: "michael", date: "10:00" },
-          { id: "12345", name: "carlos", date: "11:00" },
-        ]}
+        appointments={schedule.filter(
+          (app) => app.time >= "09:00" && app.time <= "12:00",
+        )}
         timeOfDay="morning"
+        deleteApp={deleteApp}
       />
       <Shift
-        appointments={[
-          { id: "1234", name: "michael", date: "10:00" },
-          { id: "12345", name: "carlos", date: "11:00" },
-        ]}
+        appointments={schedule.filter(
+          (app) => app.time >= "13:00" && app.time <= "18:00",
+        )}
         timeOfDay="afternoon"
+        deleteApp={deleteApp}
       />
       <Shift
-        appointments={[
-          { id: "1234", name: "michael", date: "10:00" },
-          { id: "12345", name: "carlos", date: "11:00" },
-        ]}
+        appointments={schedule.filter(
+          (app) => app.time >= "19:00" && app.time <= "21:00",
+        )}
         timeOfDay="evening"
+        deleteApp={deleteApp}
       />
     </>
   );

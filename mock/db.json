@@ -1,19 +1,24 @@
 {
   "schedule": [
     {
-      "id": "1a2b3c4d5e",
       "name": "teste",
-      "date": "2026-07-16T18:00:00"
+      "date": "2026-8-31:T10:00:00",
+      "id": "L5dXMOS6gyQ"
     },
     {
-      "name": "asdasdasdasd",
-      "date": "2026-8-22:T18:00:00",
-      "id": "fs7-L2XYl_0"
+      "name": "teste2",
+      "date": "2026-8-31:T09:00:00",
+      "id": "xWhDGAIuOuA"
     },
     {
-      "name": "testesds",
-      "date": "2026-8-24:T09:00:00",
-      "id": "jjKlbqP60OQ"
+      "name": "teste3",
+      "date": "2026-8-31:T12:00:00",
+      "id": "3tE0p_5yUSI"
+    },
+    {
+      "name": "teste4",
+      "date": "2026-8-31:T11:00:00",
+      "id": "GI531jlOWY0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

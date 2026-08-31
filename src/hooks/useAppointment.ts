@@ -39,7 +39,7 @@ export function useAppoitment() {
     const appointment = await postAppointment({ name, date });
     setListAppointment([
       ...listAppointment,
-      { id: appointment.id, name, date, time: time as Time },
+      { id: appointment.id, name, date: dateNoFormate, time: time as Time },
     ]);
   };
 

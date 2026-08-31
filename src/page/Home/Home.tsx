@@ -17,7 +17,10 @@ export function Home() {
         schedule={listAppointment}
         sendForm={sendAppointment}
       />
-      <Main />
+      <Main
+        schedule={listAppointment}
+        deleteApp={deleteAnAppointment}
+      />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { ButtonIcon } from "../ButtonIcon";
 import type { ShiftProps } from "./Shift.types";
 import { shiftStyles } from "./Shift.styles";
 
-export function Shift({ appointments, timeOfDay }: ShiftProps) {
+export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
   const {
     shiftStyle,
     headerStyle,
@@ -17,7 +17,7 @@ export function Shift({ appointments, timeOfDay }: ShiftProps) {
     lineParagraphStyle,
   } = shiftStyles();
   const handleDeleteAppointment = (idAppointment: string) => {
-    console.log(idAppointment);
+    deleteApp(idAppointment);
   };
   if (timeOfDay === "morning") {
     return (
@@ -33,8 +33,11 @@ export function Shift({ appointments, timeOfDay }: ShiftProps) {
         </div>
         <ol className={listStyle()}>
           {appointments.map((appointment) => (
-            <li className={lineStyle()}>
-              <p className={lineParagraphStyle()}>{appointment.date}</p>
+            <li
+              key={appointment.id}
+              className={lineStyle()}
+            >
+              <p className={lineParagraphStyle()}>{appointment.time}</p>
               <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
                 {appointment.name}
               </p>
