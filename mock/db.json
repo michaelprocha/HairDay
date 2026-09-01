@@ -1,25 +1,4 @@
 {
-  "schedule": [
-    {
-      "name": "teste",
-      "date": "2026-8-31:T10:00:00",
-      "id": "L5dXMOS6gyQ"
-    },
-    {
-      "name": "teste2",
-      "date": "2026-8-31:T09:00:00",
-      "id": "xWhDGAIuOuA"
-    },
-    {
-      "name": "teste3",
-      "date": "2026-8-31:T12:00:00",
-      "id": "3tE0p_5yUSI"
-    },
-    {
-      "name": "teste4",
-      "date": "2026-8-31:T11:00:00",
-      "id": "GI531jlOWY0"
-    }
-  ],
+  "schedule": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

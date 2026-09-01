@@ -32,22 +32,24 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
           <p className={headerParagraphStyle()}>09h-12h</p>
         </div>
         <ol className={listStyle()}>
-          {appointments.map((appointment) => (
-            <li
-              key={appointment.id}
-              className={lineStyle()}
-            >
-              <p className={lineParagraphStyle()}>{appointment.time}</p>
-              <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
-                {appointment.name}
-              </p>
-              <ButtonIcon
-                icon={trashIcon}
-                size="sx"
-                onClick={() => handleDeleteAppointment(appointment.id)}
-              />
-            </li>
-          ))}
+          {appointments
+            .toSorted((a, b) => a.time.localeCompare(b.time))
+            .map((appointment) => (
+              <li
+                key={appointment.id}
+                className={lineStyle()}
+              >
+                <p className={lineParagraphStyle()}>{appointment.time}</p>
+                <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
+                  {appointment.name}
+                </p>
+                <ButtonIcon
+                  icon={trashIcon}
+                  size="sx"
+                  onClick={() => handleDeleteAppointment(appointment.id)}
+                />
+              </li>
+            ))}
         </ol>
       </div>
     );
@@ -66,19 +68,21 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
           <p className={headerParagraphStyle()}>13h-18h</p>
         </div>
         <ol className={listStyle()}>
-          {appointments.map((appointment) => (
-            <li className={lineStyle()}>
-              <p className={lineParagraphStyle()}>{appointment.date}</p>
-              <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
-                {appointment.name}
-              </p>
-              <ButtonIcon
-                icon={trashIcon}
-                size="sx"
-                onClick={() => handleDeleteAppointment(appointment.id)}
-              />
-            </li>
-          ))}
+          {appointments
+            .toSorted((a, b) => a.time.localeCompare(b.time))
+            .map((appointment) => (
+              <li className={lineStyle()}>
+                <p className={lineParagraphStyle()}>{appointment.time}</p>
+                <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
+                  {appointment.name}
+                </p>
+                <ButtonIcon
+                  icon={trashIcon}
+                  size="sx"
+                  onClick={() => handleDeleteAppointment(appointment.id)}
+                />
+              </li>
+            ))}
         </ol>
       </div>
     );
@@ -94,19 +98,21 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
         <p className={headerParagraphStyle()}>19h-21h</p>
       </div>
       <ol className={listStyle()}>
-        {appointments.map((appointment) => (
-          <li className={lineStyle()}>
-            <p className={lineParagraphStyle()}>{appointment.date}</p>
-            <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
-              {appointment.name}
-            </p>
-            <ButtonIcon
-              icon={trashIcon}
-              size="sx"
-              onClick={() => handleDeleteAppointment(appointment.id)}
-            />
-          </li>
-        ))}
+        {appointments
+          .toSorted((a, b) => a.time.localeCompare(b.time))
+          .map((appointment) => (
+            <li className={lineStyle()}>
+              <p className={lineParagraphStyle()}>{appointment.time}</p>
+              <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
+                {appointment.name}
+              </p>
+              <ButtonIcon
+                icon={trashIcon}
+                size="sx"
+                onClick={() => handleDeleteAppointment(appointment.id)}
+              />
+            </li>
+          ))}
       </ol>
     </div>
   );
