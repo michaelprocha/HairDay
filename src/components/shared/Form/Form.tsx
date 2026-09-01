@@ -24,6 +24,8 @@ export function Form({ schedule, sendForm, ...props }: FormProps) {
   const handleCreateAppointment = (e: SubmitEvent) => {
     e.preventDefault();
     sendForm(name, inputValue, time);
+    setName("");
+    setTime("");
   };
 
   const HandleOpenCalendar = () => {

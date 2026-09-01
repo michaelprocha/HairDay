@@ -1,4 +1,25 @@
 {
-  "schedule": [],
+  "schedule": [
+    {
+      "name": "teste",
+      "date": "2026-9-1:T09:00:00",
+      "id": "t0TKFYuQEoM"
+    },
+    {
+      "name": "teste2",
+      "date": "2026-9-1:T12:00:00",
+      "id": "eTWm4OvkkSg"
+    },
+    {
+      "name": "teste3",
+      "date": "2026-9-1:T10:00:00",
+      "id": "R_eKnRlIhZA"
+    },
+    {
+      "name": "teste4",
+      "date": "2026-9-1:T11:00:00",
+      "id": "xfMy_kS3MOA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
