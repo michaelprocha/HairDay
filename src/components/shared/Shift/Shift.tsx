@@ -39,7 +39,9 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
                 key={appointment.id}
                 className={lineStyle()}
               >
-                <p className={lineParagraphStyle()}>{appointment.time}</p>
+                <p className={lineParagraphStyle({ class: "min-w-12" })}>
+                  {appointment.time}
+                </p>
                 <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
                   {appointment.name}
                 </p>
@@ -72,7 +74,9 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
             .toSorted((a, b) => a.time.localeCompare(b.time))
             .map((appointment) => (
               <li className={lineStyle()}>
-                <p className={lineParagraphStyle()}>{appointment.time}</p>
+                <p className={lineParagraphStyle({ class: "min-w-12" })}>
+                  {appointment.time}
+                </p>
                 <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
                   {appointment.name}
                 </p>
@@ -102,7 +106,9 @@ export function Shift({ appointments, timeOfDay, deleteApp }: ShiftProps) {
           .toSorted((a, b) => a.time.localeCompare(b.time))
           .map((appointment) => (
             <li className={lineStyle()}>
-              <p className={lineParagraphStyle()}>{appointment.time}</p>
+              <p className={lineParagraphStyle({ class: "min-w-12" })}>
+                {appointment.time}
+              </p>
               <p className={lineParagraphStyle({ class: "flex-1 text-md" })}>
                 {appointment.name}
               </p>
