@@ -1,14 +1,15 @@
 import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
 import type { asideStyles } from "./Aside.styles";
-import type { Appointment } from "../../../types/appointment.types";
+import type { AppointmentDateTime } from "../../../types/appointment.types";
 
 type AsideProps = Omit<
   ComponentProps<"aside">,
   keyof VariantProps<typeof asideStyles>
 > &
   VariantProps<typeof asideStyles> & {
-    schedule: Array<Appointment>;
+    schedule: Array<AppointmentDateTime>;
+    sendForm: (name: string, dateNoFormate: string, time: string) => void;
   };
 
 export { type AsideProps };

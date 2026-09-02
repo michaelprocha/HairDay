@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
 import type { shiftStyles } from "./Shift.styles";
-import type { Appointment } from "../../../types/appointment.types";
+import type { AppointmentDateTime } from "../../../types/appointment.types";
 
 type TimeOfDay = "morning" | "afternoon" | "evening" | "night";
 
@@ -10,8 +10,9 @@ type ShiftProps = Omit<
   keyof VariantProps<typeof shiftStyles>
 > &
   VariantProps<typeof shiftStyles> & {
-    appointments: Array<Appointment>;
+    appointments: Array<AppointmentDateTime>;
     timeOfDay: TimeOfDay;
+    deleteApp: (id: string) => void;
   };
 
 export { type ShiftProps };

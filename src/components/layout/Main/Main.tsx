@@ -2,8 +2,9 @@ import { Shifts } from "../../shared";
 import { DateInput } from "../../ui/DateInput";
 import { mainStyles } from "./Main.styles";
 import { useRef, useState } from "react";
+import { type MainTypes } from "./Main.types";
 
-export function Main({}) {
+export function Main({ schedule, deleteApp }: MainTypes) {
   const inputDateRef = useRef<HTMLInputElement | null>(null);
   const [inputValue, setInputValue] = useState<string>(
     new Date().toLocaleDateString(navigator.language),
@@ -50,7 +51,10 @@ export function Main({}) {
         />
       </div>
       <div className={shiftsStyles()}>
-        <Shifts />
+        <Shifts
+          schedule={schedule.filter((app) => app.date === inputValue)}
+          deleteApp={deleteApp}
+        />
       </div>
     </main>
   );

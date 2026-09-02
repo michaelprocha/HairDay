@@ -9,7 +9,7 @@ async function getSchedule(): Promise<Array<Appointment>> {
     const fetchSchedule = await fetch(`${URL}/${paths.schedule}`);
 
     if (fetchSchedule.ok) {
-      const schedule = await fetchSchedule.json();
+      const schedule = (await fetchSchedule.json()) as Array<Appointment>;
       return schedule;
     }
 
